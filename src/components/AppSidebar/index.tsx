@@ -39,7 +39,7 @@ export default function AppSidebar() {
     const router = useRouter()
 
     return (
-        <Sidebar className="py-10">
+        <Sidebar className="h-[100vh] py-10">
             <SidebarContent>
                 <SidebarGroup>
                     <SidebarGroupLabel>Application</SidebarGroupLabel>
