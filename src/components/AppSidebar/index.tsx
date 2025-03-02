@@ -1,5 +1,8 @@
-import { Home, Settings } from "lucide-react";
+'use client'
+
+import { DiamondPlus, Home, LogOut, Settings } from "lucide-react";
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "../ui/sidebar";
+import { useRouter } from "next/navigation";
 
 
 // Menu items
@@ -7,9 +10,15 @@ import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupLabel
 const items = [
     {
         title: "Home",
-        url: "#",
+        url: "/",
         icon: Home
-    }
+    },
+
+    {
+        title: "Task",
+        url: "#",
+        icon: DiamondPlus
+    },
 ]
 
 const itemsFooter = [
@@ -17,12 +26,20 @@ const itemsFooter = [
         title: "Configuration",
         url: "#",
         icon: Settings
+    },
+
+    {
+        title: "Log Out",
+        url: "/Login",
+        icon: LogOut
     }
 ]
 
 export default function AppSidebar() {
+    const router = useRouter()
+
     return (
-        <Sidebar className="py-8">
+        <Sidebar className="py-10">
             <SidebarContent>
                 <SidebarGroup>
                     <SidebarGroupLabel>Application</SidebarGroupLabel>
@@ -46,8 +63,8 @@ export default function AppSidebar() {
                 <SidebarMenu>
                     {itemsFooter.map((item) => (
                         <SidebarMenuItem key={item.title}>
-                            <SidebarMenuButton asChild>
-                                <a href={item.url}>
+                            <SidebarMenuButton asChild onClick={() => router.push(item.url)}>
+                                <a href="#">
                                     <item.icon />
                                     <span>{item.title}</span>
                                 </a>
