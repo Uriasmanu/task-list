@@ -16,7 +16,7 @@ const items = [
 
     {
         title: "Task",
-        url: "#",
+        url: "/Task",
         icon: DiamondPlus
     },
 ]
@@ -24,7 +24,7 @@ const items = [
 const itemsFooter = [
     {
         title: "Configuration",
-        url: "#",
+        url: "/Configuration",
         icon: Settings
     },
 
