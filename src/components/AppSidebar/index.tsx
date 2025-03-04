@@ -16,7 +16,7 @@ const items = [
 
     {
         title: "Task",
-        url: "/Task",
+        url: "/TaskForm",
         icon: DiamondPlus
     },
 ]
