@@ -127,3 +127,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.page-container {
+  @apply sm:p-8 w-full
+}
