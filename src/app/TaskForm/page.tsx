@@ -1,7 +1,12 @@
+'use client'
+
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ChartNoAxesGantt, CircleGauge, OctagonAlert } from "lucide-react";
+import { useState } from "react";
 
 export default function TaskForm() {
+    const [title, setTitle] = useState('')
+
     return (
         <div className="page-container ">
             <div className="w-[98%] flex items-center flex-col h-auto gap-6 py-3">
@@ -11,7 +16,13 @@ export default function TaskForm() {
 
                 <div className="editor w-10/12 flex flex-col text-gray-800 border border-gray-300 p-4 shadow-lg max-w-2xl  gap-3">
                     <div className="flex flex-col sm:flex-row justify-between">
-                        <input className="title bg-gray-100 border border-gray-300 p-2 mb-4 outline-none" placeholder="Title" type="text" />
+                        <input 
+                        className="title bg-gray-100 border border-gray-300 p-2 mb-4 outline-none" 
+                        placeholder="Title" 
+                        type="text" 
+                        value={title}
+                        onChange={e => setTitle(e.target.value)}
+                        />
 
                         <Select>
                             <SelectTrigger className="w-[180px] border border-gray-300 rounded-md p-2">
